@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>LinkPlusPlus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-title" content="LinkPlusPLus"/>
+    <meta name="keywords" content="LinkPlusPlus,linkplusplus,Link++,link-plus-plus,linkplus.plus,link,link+,link plus plus,linkpp"/>
+    <meta name="description" content="LinkPlusPlus - Connecting with the world,make human life better."/>
+    <meta itemprop="name" content="LinkPlusPlus - Connecting with the world"/>
+    <meta itemprop="description" content="Connecting with the world,make human life better."/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="LinkPlusPlus - Connecting with the world"/>
+    <meta name="twitter:description" content="Connecting with the world,make human life better."/>
+    <meta name="twitter:site" content="@LinkPlusPlus"/>
+    <meta name="twitter:creator" content="@LinkPlusPlus"/>
+    <meta name="og:title" content="LinkPlusPlus - Connecting with the world"/>
+    <meta name="og:description" content="LinkPlusPlus - Connecting with the world,make human life better."/>
+    <meta name="og:url" content="https://linkplus.plus"/>
+    <meta name="og:site_name" content="LinkPlusPlus - Connecting with the world"/>
+    <meta name="og:type" content="website"/>
+    <link rel="shortcut icon" href="./image/favctor.png"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,500,700,900&display=swap"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"/>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        body {
+            font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(120deg, #101a2b 0%, #1a263a 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .main-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 14vh;
+            padding-bottom: 8vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-title {
+            font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            color: #fff;
+            font-size: 4.5em;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            margin-bottom: 0.4em;
+            text-align: center;
+            line-height: 1.05;
+        }
+        .main-subtitle {
+            color: #b0c4de;
+            font-size: 1.35em;
+            font-weight: 400;
+            letter-spacing: 0.09em;
+            margin-bottom: 7vh;
+            text-align: center;
+            opacity: 0.6;
+            max-width: 700px;
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em 1.5em;
+            width: 100%;
+            margin-bottom: 2em;
+            justify-items: center;
+        }
+        .link-btn {
+            font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 40px;
+            padding: 0.7em 1em;
+            background: linear-gradient(90deg, rgba(26,38,58,0.98) 80%, rgba(0,255,231,0.07) 100%);
+            color: #fff;
+            border-radius: 14px;
+            font-size: 1em;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1.5px solid #23304a;
+            box-sizing: border-box;
+            transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s, transform 0.13s;
+            letter-spacing: 0.07em;
+            backdrop-filter: blur(2px);
+            outline: none;
+        }
+        .link-btn .fa {
+            margin-right: 0.7em;
+            font-size: 1.1em;
+            color: #00ffe7;
+            transition: color 0.2s;
+        }
+        .link-btn:hover, .link-btn:focus-visible {
+            background: linear-gradient(90deg, #00ffe7 0%, #1a263a 100%);
+            color: #1a263a;
+            border-color: #00ffe7;
+            box-shadow: 0 2px 12px rgba(0,255,231,0.10), 0 1px 4px rgba(31,38,135,0.10);
+            transform: translateY(-1px) scale(1.03);
+        }
+        .link-btn:hover .fa,
+        .link-btn:focus-visible .fa {
+            color: #1a263a;
+        }
+        .modal-content {
+            background: #162a44 !important;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            border: none;
+        }
+        .modal-title {
+            color: #00ffe7;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .close {
+            color: #fff;
+            opacity: 0.7;
+        }
+        .close:hover {
+            color: #00ffe7;
+            opacity: 1;
+        }
+        @media (max-width: 1400px) {
+            .main-container {
+                max-width: 98vw;
+                padding-top: 10vh;
+            }
+            .main-title {
+                font-size: 3em;
+            }
+            .main-subtitle {
+                font-size: 1.1em;
+            }
+            .links-grid {
+                grid-template-columns: repeat(2, minmax(220px, 1fr));
+                gap: 1.5em;
+            }
+            .link-btn {
+                font-size: 1.1em;
+                min-height: 56px;
+                padding: 1em 1em;
+            }
+        }
+        @media (max-width: 900px) {
+            .main-container {
+                max-width: 98vw;
+                padding-top: 7vh;
+            }
+            .main-title {
+                font-size: 2em;
+            }
+            .main-subtitle {
+                font-size: 0.95em;
+            }
+            .links-grid {
+                grid-template-columns: 1fr;
+                gap: 0.7em;
+            }
+            .link-btn {
+                font-size: 0.95em;
+                min-height: 36px;
+                padding: 0.6em 0.7em;
+            }
+        }
+        @media (max-width: 767px) {
+            .main-title {
+                font-size: 1.3em;
+            }
+            .main-subtitle {
+                font-size: 0.9em;
+            }
+            .main-container {
+                max-width: 100vw;
+                padding-top: 4vh;
+                padding-bottom: 2vh;
+                padding-left: 3vw;
+                padding-right: 3vw;
+            }
+            .links-grid {
+                grid-template-columns: 1fr;
+                gap: 1em;
+                width: 100%;
+            }
+            .link-btn {
+                font-size: 0.95em;
+                min-height: 48px;
+                padding: 0.8em 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="main-container">
+    <div class="main-title">Link++</div>
+    <div class="main-subtitle">Connecting the world, empowering life</div>
+    <div class="links-grid">
+        <a class="link-btn" href="https://github.com/linkplusplus" target="_blank"><i class="fa fa-github"></i>GitHub</a>
+        <a class="link-btn" href="https://twitter.com/linkplusplus" target="_blank"><i class="fa fa-twitter"></i>Twitter</a>
+        <a class="link-btn" href="https://t.me/linkplusplus" target="_blank"><i class="fa fa-telegram"></i>Telegram</a>
+        <a class="link-btn" href="https://youtube.com/linkplusplus" target="_blank"><i class="fa fa-youtube-play"></i>YouTube</a>
+        <a class="link-btn" href="https://www.reddit.com/r/linkplusplus/" target="_blank"><i class="fa fa-reddit"></i>Reddit</a>
+        <a class="link-btn" href="https://medium.com/linkplusplus" target="_blank"><i class="fa fa-medium"></i>Medium</a>
+        <a class="link-btn" href="https://facebook.com/linkplusplus" target="_blank"><i class="fa fa-facebook"></i>Facebook</a>
+        <a class="link-btn" href="#" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-wechat"></i>WeChat</a>
+        <a class="link-btn" href="https://weibo.com/linkplusplus" target="_blank"><i class="fa fa-weibo"></i>Weibo</a>
+        <a class="link-btn" href="https://www.instagram.com/linkplusplus/" target="_blank"><i class="fa fa-instagram"></i>Instagram</a>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade bd-example-modal-sm" id="exampleModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content" style="width: auto;margin: auto;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">WeChat</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="./image/wechat.jpg" style="width: 220px; border-radius: 12px; box-shadow: 0 2px 12px #00ffe7;">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
